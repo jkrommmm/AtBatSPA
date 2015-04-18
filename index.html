@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<!--
+	AUTHOR: Jacob Kromm jacobkromm0@gmail.com		
+	VERSION: 1.0
+	CREATED: 4.7.2015
+	ASSIGNMENT: baseball SPA
+-->
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>At Bat SPA</title>
+		<link href="css/foundation.css" rel="stylesheet">
+		<link href="css/style.css" rel="stylesheet">
+		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+	</head>
+
+	<body>
+
+		<div id="players" class="small-12 columns">
+		<fieldset id="attendance">
+			<h1>Players:</h1>
+		</fieldset>
+	</div>
+
+		<div id="teamSelect" class="small-12 columns">
+			<fieldset>
+				<h1 class="text-center">We Are:</h1>
+				<div class="button large round small-5 columns left" id="homeTeam">Home</div>
+				<div class="button large round small-5 columns right" id="visitorTeam">Visitor</div>
+			</fieldset>
+		</div>
+	
+		<div id="actions" class="small-5 columns right">
+			<div class="row">
+
+				<fieldset id="strike">
+					<div class="small-4 columns">
+						<div class="small-1 columns right"><h1 id="strikeCounter">0</h1></div>
+					</div>
+					<div class="small-6 columns">
+						<button class="button round large small-10 columns" id="strikeButton">STRIKE</button>
+					</div>
+				</fieldset>
+
+				<fieldset id="out">
+					<div class="small-4 columns">
+						<div class="small-1 columns right"><h1 id="outCounter">0</h1></div>
+					</div>
+					<div class="small-6 columns">
+						<button class="button round left large small-10 columns" id="outButton">OUT</button>
+					</div>
+				</fieldset>
+
+				<fieldset id="foul">
+					<div class="small-4 columns">
+						<div class="small-1 columns right"><h1 id="foulCounter">0</h1></div>
+					</div>
+					<div class="small-6 columns">
+						<button class="button round left large small-10 columns" id="foulButton">FOUL</button>
+					</div>
+				</fieldset>
+
+				<fieldset id="ball">
+					<div class="small-4 columns">
+						<div class="small-1 columns right"><h1 id="ballCounter">0</h1></div>
+					</div>
+					<div class="small-6 columns">
+						<button class="button round left large small-10 columns" id="ballButton">BALL</button>
+					</div>
+				</fieldset>
+
+				<fieldset id="run">
+					<div class="small-4 columns">
+						<div class="small-1 columns right"><h1 id="runCounter">0</h1></div>
+					</div>
+					<div class="small-6 columns">
+						<button class="button round left large small-10 columns" id="runButton">RUN</button>
+					</div>
+				</fieldset>
+
+				<fieldset id="base">
+					<div class="small-10 columns">
+						<button class="button round right large success small-10 columns" id="baseButton">BASE</button>
+					</div>
+				</fieldset>
+
+				<fieldset id="undo">
+					<div class="small-10 columns">
+						<button class="button round right large alert small-10 columns" id="undoButton">UNDO</button>
+					</div>
+				</fieldset>
+
+			</div>
+		</div>
+
+		<div id="offense" class="small-7 columns left">
+			<div class="row">
+
+				<fieldset id="batting">
+					<h1>Current Batter:</h1>
+					<div id="currentBatter"></div>
+				</fieldset>
+
+				<fieldset id="nextBatting">
+					<h1>Next Batting:</h1>
+					<div id="onDeck"></div>
+				</fieldset>
+
+			</div>
+		</div>
+		
+		<div id="defense" class="small-7 columns left">
+			<div class="row">
+				<fieldset id="fieldPositions">
+					<h1>Field Positions:</h1>
+					<h3>P:</h3><div id="P"></div>
+					<h3>1B:</h3><div id="1B"></div>
+					<h3>2B:</h3><div id="2B"></div>
+					<h3>3B:</h3><div id="3B"></div>
+					<h3>SS:</h3><div id="SS"></div>
+					<h3>LF:</h3><div id="LF"></div>
+					<h3>CF:</h3><div id="CF"></div>
+					<h3>RF:</h3><div id="RF"></div>
+				</fieldset>
+			</div>
+		</div>
+
+		<div id="inning" class="small-12 columns">
+			<div class="row">
+				<fieldset id="gameInning">
+					<h1>Inning:</h1>
+					<div class="small-3 column left" id="inningState"></div>
+					<div class="small-3 column left" id="inningNum"></div>
+				</fieldset>
+			</div>
+		</div>
+
+		<div id="over" class="small-12 columns">
+			<fieldset>
+				<h1 class="text-center">GAME OVER</h1>
+				<h2 id="winner" class="text-center">Winner: </h2>
+				<h2 id="loser" class="text-center">Loser: </h2>
+			</fieldset>
+		</div>
+		
+		<div id="score" class="small-12 columns">
+			<fieldset>
+				<div class="row">
+					<h1 class="text-center">SCORE</h1>
+				</div>
+				<div class="row">
+					<h1 class="left">Us:</h1>
+					<h1 class="right">Them:</h1>
+				</div>
+				<div class="row">
+					<div class="left" id="ourScore">0</div>
+					<div class="right" id="theirScore">0</div>
+				</div>
+			</fieldset>
+		</div>
+		
+		<div id="note" class="small-12 columns">
+			<fieldset>
+				<h4 class="text-center">Reload Page For New Game</h4>
+				<h5 class="text-center">Program Made By Jacob Kromm</h5>
+				<h5 class="text-center">April - 2015</h5>
+			</fieldset>
+		</div>
+		
+		
+		<!-- SCRIPTS -->
+		<script src="scripts/jquery-2.1.3.min.js"></script>
+		<script src="scripts/main.js"></script>
+
+	
+	</body>
+</html>
