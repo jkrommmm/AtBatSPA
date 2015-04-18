@@ -224,7 +224,9 @@ function awayButtonClick() {
 }
 
 function strikeButtonClick() {
-	$("#strikeButton").click(strike());
+	$("#strikeButton").click(function() {
+		strike();
+	});
 }
 
 function strike() {
